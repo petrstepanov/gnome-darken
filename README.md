@@ -23,8 +23,9 @@ gnome-dark-decorations-for-visual-studio-code-vscode.png
 
 <figure>
  <img src="https://raw.githubusercontent.com/petrstepanov/gnome-darken/main/resources/gnome-dark-decorations-for-visual-studio-code-vscode.png" alt="Dark window decorations applied to Visual Studio Code in GNOME desktop environment" />
- <figcaption>Dark window decorations applied to Visual Studio Code application in GNOME desktop environment.</figcaption>
 </figure> 
+
+Screenshot above demonstrates dark window decorations applied to Visual Studio Code application in GNOME desktop environment. At the same time Nautilus still has default light decorations.</figcaption>
 
 If the dark theme was not successfully installed for your application please source the `gnome-set-dark-app.sh` script. Specify the same launcher that you used in the install script:
 ```
