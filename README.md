@@ -37,7 +37,12 @@ Script creates `./config-dark` folder in your home directory. It instructs appli
 gtk-application-prefer-dark-theme=true
 ```
 
-Next, script overrides default application launcher located in `/usr/share/applications` by making a copy in your `/local/share/applications` folder. Modified launcher is diracted to use the `./config-dark` folder instead of the default `.config` by modifying the executable command `Exec=env XDG_CONFIG_HOME=/home/$USER/.config-dark <your-application>`.
+Next, script overrides default application launcher located in `/usr/share/applications` by making a copy in your `/local/share/applications` folder. Modified launcher is diracted to use the `./config-dark` folder instead of the default `.config` by modifying the executable command in `.desktop` file:
+```
+...
+Exec=env XDG_CONFIG_HOME=/home/<your-username>/.config-dark <your-application>
+...
+```
 
 Additionally the application alias is created in `.bashrc`. This ensures the application is launched with dark decorations even if use staqrted it from terminal.
 
