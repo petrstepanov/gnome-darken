@@ -4,7 +4,7 @@
   <img src="https://raw.githubusercontent.com/petrstepanov/gnome-darken/main/resources/gnome-darken.png" alt="Gnome Darken Icon" />
 </figure>
 
-Shell script that enables dark window decorations for specific application in GNOME desktop environment. Script does work with majority of applications: Chromium browser, Visual Studio Code, etc. However, some apps require more sophisticated approach that is not yet implemented.
+Shell script that **enables dark theme** (window decorations) **for specific applications in GNOME** desktop environment. Script does work with majority of applications: Chromium browser, Visual Studio Code, etc. However, some apps require more sophisticated approach that is not yet implemented.
 
 ## How to Use the Script
 
