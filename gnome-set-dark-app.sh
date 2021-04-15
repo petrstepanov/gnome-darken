@@ -18,18 +18,20 @@ STRING=`cat $FILE`
 # Extract command from launcher 
 # https://askubuntu.com/questions/5172/running-a-desktop-file-in-the-terminal
 COMMAND=`grep '^Exec' $FILE | tail -1 | sed 's/^Exec=//' | sed 's/%.//' | sed 's/^"//g' | sed 's/" *$//g'`
-# echo "Command: $COMMAND"
+echo "Command: $COMMAND"
 
 # Do basename to remove possible "env VAR1=..." in front of the command
 COMMAND_PREFIX=`echo $COMMAND | grep -Po "env +([A-Z_]+=[a-zA-Z0-1]+ +)+"`
-# echo "Command prefix: $COMMAND_PREFIX"
-		
-COMMAND=`echo $COMMAND | sed "s;$COMMAND_PREFIX;;g"`		
-# echo "Command after prefix removal: $COMMAND"
+echo "Command prefix: $COMMAND_PREFIX"
+
+if [ ! -z "$COMMAND_PREFIX" -a "$COMMAND_PREFIX" != " " ]; then
+	COMMAND=`echo $COMMAND | sed "s;$COMMAND_PREFIX;;g"`
+	echo "Command after prefix removal: $COMMAND"
+fi
 
 # Get rid of suffixes like "--hide-window", "%U" etc by grab only first word in command
 COMMAND=`echo $COMMAND | head -n1 | awk '{print $1;}'`
-# echo "Command: $COMMAND"
+echo "Command: $COMMAND"
 
 # Finally we take the basename and obtain the actiual executable command
 EXECUTABLE=`basename $COMMAND`
