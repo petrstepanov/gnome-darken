@@ -40,6 +40,7 @@ echo "Executable: $EXECUTABLE"
 # Exit if executable is undetermined 
 if [ -z "${EXECUTABLE}" ]
 then
+	echo "ERROR: Cannot determine executable!"
 	exit 1
 fi
 
@@ -58,6 +59,7 @@ source ~/.bashrc
 # Override application launcher
 FILENAME=`basename $FILE`
 cp $FILE ~/.local/share/applications/$FILENAME
+sed -i "s;Exec=env;Exec=;" ~/.local/share/applications/$FILENAME
 sed -i "s;Exec=;Exec=env XDG_CONFIG_HOME=$HOME/.config-dark ;" ~/.local/share/applications/$FILENAME
 xdg-desktop-menu forceupdate
 
