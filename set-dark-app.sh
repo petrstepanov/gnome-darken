@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/bin/bash -i
+
+# Interactive shell shebang: https://askubuntu.com/a/1041348
 
 # Open file picker and select the desktop launcher filename to be modified
 FILE=`zenity --file-selection --title="Select application launcher you want to make dark" --filename=/usr/share/applications/`
